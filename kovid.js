@@ -1,5 +1,6 @@
  let calculated = [];
- let sourceKey = "0107Mayis2021";
+ let dataKeys = Object.keys(kovid);
+ let sourceKey = dataKeys[dataKeys.length - 1];
  let lastType = 1;
  let colorType = 2;
  svgturkiyeharitasi();
@@ -79,3 +80,20 @@
         calculate()
     }
   }
+
+function findTopCities(){
+    let selector = document.getElementById("dateSelector");
+    console.log(selector.value);
+}
+
+window.onload = function(){
+    let selector = document.getElementById("dateSelector");
+
+    for (const [key, value] of Object.entries(aciklamalar)) {
+        let option = document.createElement("option");
+        option.text = value;
+        option.value = key;
+        selector.add(option);
+    }
+    selector.lastChild.selected = 'selected';
+}
