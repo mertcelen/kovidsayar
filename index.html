@@ -296,10 +296,10 @@
             <h2>Gösterim türü</h2>
             <small>Sayısal olarak toplam vakalara göre veya 100bindeki vaka sayısına oranına göre sıralama.</small><br><br>
             <div class="btn-group" role="group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked onclick="calculate(1)">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" onclick="calculate(1)">
                 <label class="btn btn-outline-primary" for="btnradio1">Sayısal Toplam</label>
               
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" onclick="calculate(2)">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked onclick="calculate(2)">
                 <label class="btn btn-outline-primary" for="btnradio2">Oransal Toplam (100.000 nüfus'ta)</label>
               </div>
         </div>
@@ -308,18 +308,19 @@
             <small>Sağlık bakanlığının belirlerdiği renkleri ya da mantıksal bir renk düzenini seçebilirsiniz.</small><br><br>
             <div class="btn-group" role="group">
                 <input type="radio" class="btn-check" name="btnradio2" id="btnradio3" autocomplete="off" onclick="setDataColor(1)">
-                <label class="btn btn-outline-primary" for="btnradio3">Risk Renkleri</label>
-              
-                <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off" checked onclick="setDataColor(2)">
+                <label class="btn btn-outline-primary" for="btnradio3">Eski Risk Renkleri</label>
+                <input type="radio" class="btn-check" name="btnradio2" id="btnradio5" autocomplete="off" checked onclick="setDataColor(2)">
+                <label class="btn btn-outline-primary" for="btnradio5">Yeni Risk Renkleri</label>
+                <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off" onclick="setDataColor(3)">
                 <label class="btn btn-outline-primary" for="btnradio4">Mantıksal Renk Düzeni</label>
               </div>
         </div>
     </div>
     
     <!-- SVG Türkiye Haritası -->
-    <script src="data.js?ver=v0D41UebAL8OWZTYNrnc6SBx6osQ3kzBu5F7TMv"></script>
-    <script src="harita.js?ver=v0D41UebAL8OWZTYNrnc6SBx6osQ3kzBu5F7TMv"></script>
-    <script src="kovid.js?ver=v0D41UebAL8OWZTYNrnc6SBx6osQ3kzBu5F7TMv"></script>
+    <script src="data.js?ver=uV5TmdEb9"></script>
+    <script src="harita.js?ver=uV5TmdEb9"></script>
+    <script src="kovid.js?ver=uV5TmdEb9"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMWDBT9VBZ"></script>

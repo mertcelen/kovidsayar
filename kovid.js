@@ -1,10 +1,10 @@
  let calculated = [];
  let dataKeys = Object.keys(kovid);
  let sourceKey = dataKeys[dataKeys.length - 1];
- let lastType = 1;
+ let lastType = 2;
  let colorType = 2;
  svgturkiyeharitasi();
- calculate(1);
+ calculate(2);
  function calculate(type = null){
     calculated = [];
     if (type == null) {
@@ -28,6 +28,8 @@
     calculated.forEach(function(data,index){
         if (colorType == 1){
             cityColor = riskColor(data.sayi)
+        }else if(colorType === 2){
+            cityColor = riskColor2(data.sayi)
         }else{
             cityColor = RGBAToHexA(255,56,(100 - index),(100 - index) / 100);
         }
@@ -38,11 +40,23 @@
  }
 
  function riskColor(data){
-    if (data < 11){
+    if (data < 10){
         return '0071c1';
-    }else if(data < 36){
+    }else if(data < 35){
         return '#f0e513';
-    }else if(data < 101){
+    }else if(data < 100){
+        return '#f8931f';
+    }else{
+        return '#df1a23';
+    }
+ }
+
+ function riskColor2(data){
+    if (data < 20){
+        return '0071c1';
+    }else if(data < 50){
+        return '#f0e513';
+    }else if(data < 100){
         return '#f8931f';
     }else{
         return '#df1a23';
