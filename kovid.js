@@ -41,7 +41,7 @@
 
  function riskColor(data){
     if (data < 10){
-        return '0071c1';
+        return '#0d6efd';
     }else if(data < 35){
         return '#f0e513';
     }else if(data < 100){
@@ -53,7 +53,7 @@
 
  function riskColor2(data){
     if (data < 20){
-        return '0071c1';
+        return '#0d6efd';
     }else if(data < 50){
         return '#f0e513';
     }else if(data < 100){
