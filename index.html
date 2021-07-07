@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
   <body>
+    
     <!-- SVG Türkiye Haritası | MIT Lisans | dnomak.com -->
     <div class="row" style="margin:50px;">
         <div class="col-md-10">
@@ -22,6 +23,31 @@
             Nüfus Sayısı Kaynağı : <a href="https://tuikweb.tuik.gov.tr/PreIstatistikTablo.do?istab_id=1590" target="_blank">TUİK</a> <br>
         </div>
     </div>
+    <div class="row" style="margin:50px;">
+      <div class="col-md-12" style="margin-bottom:20px;">
+          <select class="form-select" id="dateSelector" onchange="setSourceDate()">
+          </select>
+      </div>
+      <!-- <div class="col-md-4" style="margin-bottom:20px;">
+        <h2>Şehir Miktarları</h2><br>
+        <div class="row">
+          <div class="col-md-6">Kırmızı</div>
+          <div class="col-md-6" id="redCount"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Turuncu</div>
+          <div class="col-md-6" id="orangeCount"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Sarı</div>
+          <div class="col-md-6" id="yellowCount"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Mavi</div>
+          <div class="col-md-6" id="blueCount"></div>
+        </div>
+    </div> -->
+  </div>
     <div class="row" style="margin:50px;">
         <div class="col-md-12">
             <div class="il-isimleri"></div>
@@ -285,42 +311,11 @@
     </div>
         </div>
     </div>
-    <div class="row" style="margin:50px;">
-        <div class="col-md-4" style="margin-bottom:20px;">
-            <h2>Veri Tarihi</h2>
-            <small>Gösterilecek verilerin tarih aralığı.</small><br><br>
-            <select class="form-select" id="dateSelector" onchange="setSourceDate()">
-            </select>
-        </div>
-        <div class="col-md-4" style="margin-bottom:20px;">
-            <h2>Gösterim türü</h2>
-            <small>Sayısal olarak toplam vakalara göre veya 100bindeki vaka sayısına oranına göre sıralama.</small><br><br>
-            <div class="btn-group" role="group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" onclick="calculate(1)">
-                <label class="btn btn-outline-primary" for="btnradio1">Sayısal Toplam</label>
-              
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked onclick="calculate(2)">
-                <label class="btn btn-outline-primary" for="btnradio2">Oransal Toplam (100.000 nüfus'ta)</label>
-              </div>
-        </div>
-        <div class="col-md-4" style="margin-bottom:20px;">
-            <h2>Renk Ayarı</h2>
-            <small>Sağlık bakanlığının belirlerdiği renkleri ya da mantıksal bir renk düzenini seçebilirsiniz.</small><br><br>
-            <div class="btn-group" role="group">
-                <input type="radio" class="btn-check" name="btnradio2" id="btnradio3" autocomplete="off" onclick="setDataColor(1)">
-                <label class="btn btn-outline-primary" for="btnradio3">Eski Risk Renkleri</label>
-                <input type="radio" class="btn-check" name="btnradio2" id="btnradio5" autocomplete="off" checked onclick="setDataColor(2)">
-                <label class="btn btn-outline-primary" for="btnradio5">Yeni Risk Renkleri</label>
-                <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off" onclick="setDataColor(3)">
-                <label class="btn btn-outline-primary" for="btnradio4">Mantıksal Renk Düzeni</label>
-              </div>
-        </div>
-    </div>
+    
     
     <!-- SVG Türkiye Haritası -->
-    <script src="data.js?ver=nP6liRlctcSkpgRSP2Aqvin2v6a"></script>
-    <script src="harita.js?ver=nP6liRlctcSkpgRSP2Aqvin2v6a"></script>
-    <script src="kovid.js?ver=nP6liRlctcSkpgRSP2Aqvin2v6a"></script>
+    <script src="data.js?ver=aWtFZY9j6svQYnP6liRlctcSkpgRSP2Aqvin2v6a"></script>
+    <script src="kovid.js?ver=aWtFZY9j6svQYnP6liRlctcSkpgRSP2Aqvin2v6a"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMWDBT9VBZ"></script>
