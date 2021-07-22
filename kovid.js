@@ -11,35 +11,48 @@
  calculate(2);
  function calculate(type = null){
     calculated = [];
-    if (type == null) {
-        type = lastType;
-    }else{
-        lastType = type;
-    }
-    
+    calculatedOld = [];
+    previousKey = findPreviousKey(sourceKey);
+    console.log(previousKey);
     Object.entries(nufus).forEach(([il, sayi]) => {
-        if (type == "1"){
-            num = Math.floor((sayi < 100000 ? 100000 : sayi) / 100000 * parseFloat(kovid[sourceKey][il]));
-        }else{
-            num = Math.floor(parseFloat(kovid[sourceKey][il]));
-        }
+      num = findPercentage(sourceKey,il);
+      numOld = findPercentage(previousKey,il);
         calculated.push({
             "il" : il,
             "sayi" : num 
         });
+        calculatedOld.push({
+          "il" : il,
+          "sayi" : numOld 
+      });
     });
-    calculated = calculated.sort(function(a, b){return b.sayi - a.sayi});
+    let overlays = document.getElementById("overlays");
+    overlays.innerHTML = "";
+    let windowPositionY = window.scrollY;
+    let windowPositionX = window.scrollX;
     calculated.forEach(function(data,index){
-        if (colorType == 1){
-            cityColor = riskColor(data.sayi)
-        }else if(colorType === 2){
-            cityColor = riskColor2(data.sayi)
-        }else{
-            cityColor = RGBAToHexA(255,56,(100 - index),(100 - index) / 100);
-        }
+      cityColor = riskColor2(data.sayi);
         document.querySelectorAll("[data-iladi='"+ data.il + "']").forEach(function(element){
             Array.from(element.children).forEach(path => path.style.fill = cityColor);
-        });
+      });
+      let newSpan = document.createElement('span');
+      console.log(data.il, data.sayi,calculatedOld[index].sayi);
+      if(data.sayi > calculatedOld[index].sayi){
+        newSpan.innerHTML = "↑";
+      }else{
+        newSpan.innerHTML = "↓";
+      }
+      //Find Element' Center.
+      let el = document.querySelectorAll("[data-iladi='"+ data.il + "']")[0];
+      let x = (el.getBoundingClientRect().left + el.getBoundingClientRect().right) / 2;
+      let y = (el.getBoundingClientRect().top + el.getBoundingClientRect().bottom) / 2;
+      if (y < 450){
+        y -= 20;
+      }
+      newSpan.style.position = 'absolute';
+      newSpan.style.top = Math.floor(y + windowPositionY) + 'px';
+      newSpan.style.left = Math.floor(x + windowPositionX) + 'px';
+      overlays.appendChild(newSpan);
     });
     // setCounts();
  }
@@ -87,6 +100,16 @@
     }
  }
 
+ function getTextColorFromRiskColor(riskColor){
+    switch(riskColor){
+      case "#df1a23":
+      case "#0d6efd":
+        return 'white';
+        default:
+          return 'black';
+    }
+ }
+
  function RGBAToHexA(r,g,b,a) {
     r = r.toString(16);
     g = g.toString(16);
@@ -121,7 +144,6 @@
 
 function findTopCities(){
     let selector = document.getElementById("dateSelector");
-    console.log(selector.value);
 }
 
 window.onload = function(){
@@ -136,6 +158,14 @@ window.onload = function(){
     selector.lastChild.selected = 'selected';
 }
 
+function findCount(sourceDay,cityName){
+  return Math.floor((nufus[cityName] < 100000 ? 100000 
+    : nufus[cityName]) / 100000 * parseFloat(kovid[sourceDay][cityName]))
+}
+
+function findPercentage(sourceDay,cityName){
+  return parseFloat(kovid[sourceDay][cityName]);
+}
 
 function svgturkiyeharitasi() {
     const element = document.querySelector('#svg-turkiye-haritasi');
@@ -146,12 +176,12 @@ function svgturkiyeharitasi() {
       function (event) {
         if (event.target.tagName === 'path') {
           let current = event.target.parentNode.getAttribute('data-iladi');
-          toplam = Math.floor((nufus[current] < 100000 ? 100000 : nufus[current]) / 100000 * parseFloat(kovid[sourceKey][current]))
-          toplamEski = Math.floor((nufus[current] < 100000 ? 100000 : nufus[current]) / 100000 * parseFloat(kovid[findPreviousKey(sourceKey)][current]))
+          toplam = findCount(sourceKey,current);
+          toplamEski = findCount(findPreviousKey(sourceKey),current);
           gunluk = Math.round(toplam / 7);
           gunlukEski = Math.round(toplamEski / 7);
-          yuzbinde = parseFloat(kovid[sourceKey][current]);
-          yuzbindeEski = parseFloat(kovid[findPreviousKey(sourceKey)][current]);
+          yuzbinde = findPercentage(sourceKey,current);
+          yuzbindeEski = findPercentage(findPreviousKey(sourceKey),current);
           if(mobileCheck()){
             document.getElementById("mobileWrapper").style.display = '';
             info = document.getElementById("mobileDetails");

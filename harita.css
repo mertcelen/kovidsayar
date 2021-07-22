@@ -11,7 +11,7 @@
   }
   .il-isimleri {
     position: absolute;
-    z-index: 2;
+    z-index: 1000;
   }
   .il-isimleri div {
     font-family: 'Open Sans';
