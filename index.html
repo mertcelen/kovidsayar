@@ -24,29 +24,15 @@
         </div>
     </div>
     <div class="row" style="margin:30px;">
-      <div class="col-md-12" style="margin-bottom:20px;">
-          <select class="form-select" id="dateSelector" onchange="setSourceDate()">
-          </select>
+      <div class="col-md-4">
+        <button class="btn btn-secondary" style="float:right" onclick="goPreviousDate()"> < </button>
       </div>
-      <!-- <div class="col-md-4" style="margin-bottom:20px;">
-        <h2>Şehir Miktarları</h2><br>
-        <div class="row">
-          <div class="col-md-6">Kırmızı</div>
-          <div class="col-md-6" id="redCount"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">Turuncu</div>
-          <div class="col-md-6" id="orangeCount"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">Sarı</div>
-          <div class="col-md-6" id="yellowCount"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">Mavi</div>
-          <div class="col-md-6" id="blueCount"></div>
-        </div>
-    </div> -->
+      <div class="col-md-4">
+        <select class="form-select" id="dateSelector" onchange="setSourceDate()"></select>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-secondary" style="float: left;" onclick="goNextDate()"> > </button>
+      </div>
   </div>
     <div class="row" id="turkeyWrapper">
         <div class="col-md-12">
@@ -322,8 +308,8 @@
     </div>
     <div id="overlays" style="z-index:99"></div>
     <!-- SVG Türkiye Haritası -->
-    <script src="data.js?ver=1JjWqmsCMu3RHMZ3EexJuvMivEVyyI1NH50iLTD"></script>
-    <script src="kovid.js?ver=1JjWqmsCMu3RHMZ3EexJuvMivEVyyI1NH50iLTD"></script>
+    <script src="data.js?ver=MSM9MtzzUevtW1JjWqmsCMu3RHMZ3EexJuvMivEVyyI1NH50iLTD"></script>
+    <script src="kovid.js?ver=MSM9MtzzUevtW1JjWqmsCMu3RHMZ3EexJuvMivEVyyI1NH50iLTD"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMWDBT9VBZ"></script>

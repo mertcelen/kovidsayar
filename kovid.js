@@ -23,7 +23,6 @@
     calculated = [];
     calculatedOld = [];
     previousKey = findPreviousKey(sourceKey);
-    console.log(previousKey);
     Object.entries(nufus).forEach(([il, sayi]) => {
       num = findPercentage(sourceKey,il);
       numOld = findPercentage(previousKey,il);
@@ -47,7 +46,6 @@
       });
       if(!mobileCheck()){
         let newSpan = document.createElement('span');
-        console.log(data.il, data.sayi,calculatedOld[index].sayi);
         if(data.sayi > calculatedOld[index].sayi){
           newSpan.innerHTML = "↑";
         }else{
@@ -245,3 +243,19 @@ function findPreviousKey(currentKey){
     return currentKey;
 }
 
+function goPreviousDate(){
+  let element = document.getElementById("dateSelector");
+  try{
+    element.value = element.children[element.selectedIndex].previousSibling.value;
+    setSourceDate();
+  }catch{};
+  
+}
+
+function goNextDate(){
+  let element = document.getElementById("dateSelector");
+  try{
+    element.value = element.children[element.selectedIndex].nextSibling.value;
+    setSourceDate();
+  }catch{}
+}
