@@ -1,4 +1,5 @@
 let cities = [
+    "Tüm Türkiye",
     "Adana",
     "Ad\u0131yaman",
     "Afyon",
@@ -85,6 +86,7 @@ let cities = [
 let values = {};
 
 let mainChart = null;
+let vaccineChart = null;
 
 function generateCitiesSelect(){
     let element = document.getElementById("citiesSelect");
@@ -118,9 +120,11 @@ async function loadJson(url) {
 
 async function loadCityData(){
     values.totals = await loadJson("/generated/total/city.json");
+    values.totals['Tüm Türkiye'] = await loadJson("/generated/total/country.json");
     values.percentages = await loadJson("/generated/percentage/city.json");
+    values.percentages['Tüm Türkiye'] = await loadJson("/generated/percentage/country.json");
     values.dates = await loadJson("/input/translations.json");
-    values.datesPretty = Object.values(values.dates);
+    values.datesPretty = Object.values(await loadJson("/input/translations-short.json"));
     generateCitiesSelect();
     showCityDetails();
     generateDatesSelect();
@@ -138,13 +142,13 @@ function showCityDetails(){
                 datasets: [{
                     data: values.totals[element.value],
                     borderWidth: 1,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    backgroundColor: 'rgb(223, 26, 35)',
                     label: 'Toplam Vaka'
                 },
                 {
                     data: values.percentages[element.value],
                     borderWidth: 1,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    backgroundColor: 'rgb(13, 110, 253)',
                     label: '100 Binde'
                 }]
             },
@@ -182,6 +186,49 @@ function getRiskColor(data){
     }
  }
 
+ async function loadVaccineData(){
+     let vaccineData = await loadJson('generated/vaccine_percents.json');
+     function colorize() {
+        return (ctx) => {
+          var v = ctx.parsed.y;
+          var c = v < -50 ? '#D60000'
+            : v < 0 ? '#F46300'
+            : v < 50 ? '#0358B6'
+            : '#44DE28';
+          return c;
+        };
+      }
+      if(vaccineChart == null){
+        var ctx = document.getElementById('vaccineChart').getContext('2d');
+        vaccineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(vaccineData),
+                datasets: [{
+                    data: Object.keys(vaccineData),
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(223, 26, 35)',
+                    label: 'Toplam Vaka'
+                }]
+            },
+            options: {
+                plugins: {
+                  legend: false,
+                },
+                elements: {
+                  bar: {
+                    backgroundColor: colorize(),
+                    borderColor: colorize(),
+                    borderWidth: 2
+                  }
+                }
+              }
+        });
+    }
+    vaccineChart.data.datasets[0].data = Object.values(vaccineData);
+    vaccineChart.update();
+ }
+
 document.querySelector('#svg-turkiye-haritasi').addEventListener('click',function(event){
     if (event.target.tagName === 'path') {
         let current = event.target.parentNode.getAttribute('data-iladi');
@@ -191,3 +238,4 @@ document.querySelector('#svg-turkiye-haritasi').addEventListener('click',functio
       }
 });
 loadCityData();
+// loadVaccineData();

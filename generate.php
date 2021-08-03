@@ -24,15 +24,22 @@ function createCityNumbers(){
     $translations = loadJson('input/translations.json');
     $total = [];
     $percentage = [];
+    $countryTotals = [];
+    $countryAverageTotals = [];
     foreach($translations as $short => $translation){
         $percentagePath = "generated/percentage/weekly/$short.json";
         $totalFilePath = "generated/total/weekly/$short.json";
         createCityData($percentage,$percentagePath);
         createCityData($total,$totalFilePath);
-        
+        array_push($countryTotals,createSumCityData($totalFilePath));
     }
+    foreach($countryTotals as $total){
+        array_push($countryAverageTotals, intval($total / 836));
+    }
+    file_put_contents('generated/total/country.json',json_encode($countryTotals,JSON_PRETTY_PRINT));
     file_put_contents('generated/total/city.json',json_encode($total,JSON_PRETTY_PRINT));
     file_put_contents('generated/percentage/city.json',json_encode($percentage,JSON_PRETTY_PRINT));
+    file_put_contents('generated/percentage/country.json',json_encode($countryAverageTotals,JSON_PRETTY_PRINT));
 }
 
 function createCityData(&$targetArray,$path){
@@ -45,6 +52,15 @@ function createCityData(&$targetArray,$path){
         array_push($data,$value);
         $targetArray[$city] = $data;
     }
+}
+
+function createSumCityData($path){
+    $currentWeek = loadJson($path);
+    $total = 0;
+    foreach($currentWeek as $city => $value){
+        $total += $value;
+    }
+    return $total;
 }
 
 $weekly = loadJson('input/new.json');
