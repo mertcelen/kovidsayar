@@ -22,7 +22,7 @@ function createWeeklyJson($weeklyData){
 
 function createCityNumbers(){
     $translations = loadJson('input/translations.json');
-    $total = [];
+    $totals = [];
     $percentage = [];
     $countryTotals = [];
     $countryAverageTotals = [];
@@ -30,14 +30,14 @@ function createCityNumbers(){
         $percentagePath = "generated/percentage/weekly/$short.json";
         $totalFilePath = "generated/total/weekly/$short.json";
         createCityData($percentage,$percentagePath);
-        createCityData($total,$totalFilePath);
+        createCityData($totals,$totalFilePath);
         array_push($countryTotals,createSumCityData($totalFilePath));
     }
     foreach($countryTotals as $total){
         array_push($countryAverageTotals, intval($total / 836));
     }
     file_put_contents('generated/total/country.json',json_encode($countryTotals,JSON_PRETTY_PRINT));
-    file_put_contents('generated/total/city.json',json_encode($total,JSON_PRETTY_PRINT));
+    file_put_contents('generated/total/city.json',json_encode($totals,JSON_PRETTY_PRINT));
     file_put_contents('generated/percentage/city.json',json_encode($percentage,JSON_PRETTY_PRINT));
     file_put_contents('generated/percentage/country.json',json_encode($countryAverageTotals,JSON_PRETTY_PRINT));
 }
