@@ -88,13 +88,18 @@ let values = {};
 let mainChart = null;
 let vaccineChart = null;
 
-function generateCitiesSelect(){
+async function generateCitiesSelect(){
     let element = document.getElementById("citiesSelect");
+    vaccinations = await loadJson("/generated/vaccine_percents.json");
     element.innerHTML = "";
     cities.forEach((city) => {
         let option = new Option();
+        let text = "";
+        if(vaccinations[city]){
+            text = " % " + vaccinations[city];
+        }
+        option.text = city + text;
         option.value = city;
-        option.text = city;
         element.appendChild(option);
     });
 }
@@ -125,7 +130,7 @@ async function loadCityData(){
     values.percentages['Tüm Türkiye'] = await loadJson("/generated/percentage/country.json");
     values.dates = await loadJson("/input/translations.json");
     values.datesPretty = Object.values(await loadJson("/input/translations-short.json"));
-    generateCitiesSelect();
+    await generateCitiesSelect();
     showCityDetails();
     generateDatesSelect();
     showDateDetails();
