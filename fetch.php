@@ -19,4 +19,5 @@ function getVaccinePercentage(){
 }
 $vaccinePercentage = getVaccinePercentage();
 arsort($vaccinePercentage);
+$vaccinePercentage["Afyon"] = $vaccinePercentage["Afyonkarahisar"];
 file_put_contents('generated/vaccine_percents.json',json_encode($vaccinePercentage));

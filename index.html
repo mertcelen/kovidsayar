@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <style>
       path {
@@ -15,7 +16,7 @@
     <title>Kovid Sayar</title>
 </head>
 <body>
-    <div class="row" style="margin:30px;">
+    <div class="row" style="margin:20px;">
         <div class="col-md-9">
             <h1>Kovid Sayar</h1>
         </div>
@@ -27,6 +28,7 @@
     </div>
     <div class="row" style="margin:20px;">
         <div class="col-md-8">
+          <h4>Harita Tarihi</h4>
             <select class="form-select" id="datesSelect" onchange="showDateDetails()"></select><br>
             <div class="svg-turkiye-haritasi">
                 <svg id="svg-turkiye-haritasi" viewBox="0 0 1007.478 527.323">
@@ -288,7 +290,23 @@
               </div>
         </div>
         <div class="col-md-4">
+            <h4>Şehir Seçimi</h4>
             <select class="form-select" id="citiesSelect" onchange="showCityDetails()"></select><br>
+            <h5>Grafik İçeriği</h5>
+            <form autocomplete="off">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="chartRadio" id="total" checked value="0">
+              <label class="form-check-label" for="total">Toplam Vaka Sayısı</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="chartRadio" id="percentages" value="1">
+              <label class="form-check-label" for="percentages">100.000 Kişideki Vaka Sayısı</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="chartRadio" id="diff" value="2">
+              <label class="form-check-label" for="diff">Önceki Haftaya Göre Değişim Yüzdesi</label>
+            </div>
+            </form><br>
             <canvas id="cityChart" width="400" height="400"></canvas>
         </div>
     </div>

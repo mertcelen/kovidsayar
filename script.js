@@ -130,11 +130,21 @@ async function loadCityData(){
     values.percentages['Tüm Türkiye'] = await loadJson("/generated/percentage/country.json");
     values.dates = await loadJson("/input/translations.json");
     values.datesPretty = Object.values(await loadJson("/input/translations-short.json"));
+    values.diffs = await loadJson("/generated/diffs.json");
     await generateCitiesSelect();
     showCityDetails();
     generateDatesSelect();
     showDateDetails();
 }
+document.querySelectorAll("input[name='chartRadio']").forEach((input) => {
+    input.addEventListener('change', function(event){
+        mainChart.getDatasetMeta("0").hidden=true;
+        mainChart.getDatasetMeta("1").hidden=true;
+        mainChart.getDatasetMeta("2").hidden=true;
+        mainChart.getDatasetMeta(event.target.value).hidden=false;
+        mainChart.update();
+    });
+});
 
 function showCityDetails(){
     let element = document.getElementById("citiesSelect");
@@ -145,27 +155,42 @@ function showCityDetails(){
             data: {
                 labels: values.datesPretty,
                 datasets: [{
+                    id: "total",
                     data: values.totals[element.value],
                     borderWidth: 1,
                     backgroundColor: 'rgb(223, 26, 35)',
-                    label: 'Toplam Vaka'
+                    label: 'Toplam Vaka',
+                    hidden: false
                 },
                 {
+                    id: "percentage",
                     data: values.percentages[element.value],
                     borderWidth: 1,
                     backgroundColor: 'rgb(13, 110, 253)',
-                    label: '100 Binde'
+                    label: '100 Binde',
+                    hidden: true
+                },
+                {
+                    id: "diff",
+                    data: values.diffs[element.value],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(255, 255, 0)',
+                    label: 'Değişim Oranı',
+                    hidden: true
                 }]
             },
             options: {
-                legend: {
-                    display: false
+                plugins: {
+                    legend: {
+                        display: false
+                    }
                 }
             }
         });
     }
     mainChart.data.datasets[0].data = values.totals[element.value];
     mainChart.data.datasets[1].data = values.percentages[element.value];
+    mainChart.data.datasets[2].data = values.diffs[element.value];
     mainChart.update();
 }
 
