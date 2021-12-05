@@ -159,7 +159,6 @@ function showCityDetails(){
                     data: values.totals[element.value],
                     borderWidth: 1,
                     backgroundColor: 'rgb(223, 26, 35)',
-                    label: 'Toplam Vaka',
                     hidden: false
                 },
                 {
@@ -167,7 +166,6 @@ function showCityDetails(){
                     data: values.percentages[element.value],
                     borderWidth: 1,
                     backgroundColor: 'rgb(13, 110, 253)',
-                    label: '100 Binde',
                     hidden: true
                 },
                 {
@@ -175,7 +173,6 @@ function showCityDetails(){
                     data: values.diffs[element.value],
                     borderWidth: 1,
                     backgroundColor: 'rgb(255, 255, 0)',
-                    label: 'Değişim Oranı',
                     hidden: true
                 }]
             },
