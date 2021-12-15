@@ -1,12 +1,8 @@
 {
-    "0713Agustos2021": [
+    "2026Kas\u0131m2021": [
         "Adana",
-        "Artvin",
-        "Batman",
-        "Mardin",
-        "Mersin",
-        "Mu\u015f",
-        "\u015eanl\u0131urfa"
+        "Hatay",
+        "Osmaniye"
     ],
     "1117Eylul2021": [
         "Ad\u0131yaman",
@@ -19,7 +15,6 @@
         "A\u011fr\u0131",
         "Ankara",
         "Antalya",
-        "Ardahan",
         "Ayd\u0131n",
         "Bart\u0131n",
         "Bayburt",
@@ -27,14 +22,11 @@
         "Bolu",
         "Burdur",
         "Bursa",
-        "Denizli",
         "D\u00fczce",
         "Erzincan",
         "Erzurum",
         "Giresun",
         "G\u00fcm\u00fc\u015fhane",
-        "Kahramanmara\u015f",
-        "Karab\u00fck",
         "Kars",
         "K\u0131r\u0131kkale",
         "Kocaeli",
@@ -44,9 +36,7 @@
         "Ni\u011fde",
         "Sinop",
         "Sivas",
-        "Tekirda\u011f",
-        "Tunceli",
-        "Zonguldak"
+        "Tekirda\u011f"
     ],
     "2803Eylul2021": [
         "Aksaray",
@@ -56,22 +46,35 @@
         "Amasya",
         "Bal\u0131kesir",
         "\u00c7anakkale",
-        "\u00c7orum",
         "Edirne",
         "Eski\u015fehir",
         "Gaziantep",
-        "Hatay",
         "I\u011fd\u0131r",
         "Isparta",
         "\u0130stanbul",
         "\u0130zmir",
-        "Kastamonu",
         "Konya",
         "Malatya",
         "Ordu",
         "Tokat",
         "Yalova",
         "Yozgat"
+    ],
+    "0915Ekim2021": [
+        "Ardahan",
+        "\u00c7orum",
+        "Kastamonu",
+        "Sakarya",
+        "U\u015fak",
+        "Zonguldak"
+    ],
+    "0713Agustos2021": [
+        "Artvin",
+        "Batman",
+        "Mardin",
+        "Mersin",
+        "Mu\u015f",
+        "\u015eanl\u0131urfa"
     ],
     "3106Agustos2021": [
         "Bing\u00f6l",
@@ -84,22 +87,29 @@
     "0309Nisan2021": [
         "\u00c7ank\u0131r\u0131",
         "K\u0131rklareli",
-        "Kilis",
-        "Osmaniye"
+        "Kilis"
+    ],
+    "2703Aral\u0131k2021": [
+        "Denizli"
+    ],
+    "1622Ekim2021": [
+        "Kahramanmara\u015f",
+        "Karab\u00fck"
     ],
     "1824Eylul2021": [
         "Kayseri",
         "K\u0131r\u015fehir"
     ],
     "2501Ekim2021": [
-        "K\u00fctahya",
-        "Sakarya",
-        "U\u015fak"
+        "K\u00fctahya"
     ],
     "2702Nisan2021": [
         "Samsun"
     ],
     "2430Temmuz2021": [
         "Siirt"
+    ],
+    "1319Kas\u0131m2021": [
+        "Tunceli"
     ]
 }
