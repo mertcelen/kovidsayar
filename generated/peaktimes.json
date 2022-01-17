@@ -15,10 +15,8 @@
         "A\u011fr\u0131",
         "Ankara",
         "Antalya",
-        "Ayd\u0131n",
         "Bart\u0131n",
         "Bayburt",
-        "Bilecik",
         "Bolu",
         "Burdur",
         "Bursa",
@@ -26,12 +24,10 @@
         "Erzincan",
         "Erzurum",
         "Giresun",
-        "G\u00fcm\u00fc\u015fhane",
         "Kars",
         "K\u0131r\u0131kkale",
         "Kocaeli",
         "Manisa",
-        "Mu\u011fla",
         "Nev\u015fehir",
         "Ni\u011fde",
         "Sinop",
@@ -50,8 +46,6 @@
         "Gaziantep",
         "I\u011fd\u0131r",
         "Isparta",
-        "\u0130stanbul",
-        "\u0130zmir",
         "Konya",
         "Malatya",
         "Ordu",
@@ -75,8 +69,18 @@
         "Mu\u015f",
         "\u015eanl\u0131urfa"
     ],
-    "3106Agustos2021": [
+    "0107Ocak2022": [
+        "Ayd\u0131n",
+        "Bilecik",
         "Bing\u00f6l",
+        "Denizli",
+        "Eski\u015fehir",
+        "G\u00fcm\u00fc\u015fhane",
+        "\u0130stanbul",
+        "\u0130zmir",
+        "Mu\u011fla"
+    ],
+    "3106Agustos2021": [
         "Bitlis",
         "Diyarbak\u0131r",
         "Hakkari",
@@ -87,10 +91,6 @@
         "\u00c7ank\u0131r\u0131",
         "K\u0131rklareli",
         "Kilis"
-    ],
-    "2531Aral\u0131k2021": [
-        "Denizli",
-        "Eski\u015fehir"
     ],
     "1622Ekim2021": [
         "Kahramanmara\u015f",
