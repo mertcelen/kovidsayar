@@ -16,18 +16,15 @@
         "Bart\u0131n",
         "Bayburt",
         "Burdur",
-        "Bursa",
         "D\u00fczce",
         "Erzincan",
-        "Erzurum",
         "Giresun",
         "Kars",
         "K\u0131r\u0131kkale",
         "Nev\u015fehir",
         "Ni\u011fde",
         "Sinop",
-        "Sivas",
-        "Tekirda\u011f"
+        "Sivas"
     ],
     "2803Eylul2021": [
         "Aksaray"
@@ -47,30 +44,23 @@
         "Yalova",
         "Yozgat"
     ],
-    "0814Ocak2022": [
+    "1521Ocak2022": [
         "Ankara",
-        "Ayd\u0131n",
-        "Bilecik",
-        "Bing\u00f6l",
-        "Bolu",
+        "Bursa",
+        "\u00c7ank\u0131r\u0131",
         "Denizli",
-        "Eski\u015fehir",
-        "G\u00fcm\u00fc\u015fhane",
-        "\u0130stanbul",
+        "Erzurum",
         "\u0130zmir",
-        "K\u0131rklareli",
         "Kocaeli",
         "Manisa",
-        "Mu\u011fla",
-        "Rize",
         "Sakarya",
-        "Trabzon"
+        "Tekirda\u011f",
+        "U\u015fak"
     ],
     "0915Ekim2021": [
         "Ardahan",
         "\u00c7orum",
         "Kastamonu",
-        "U\u015fak",
         "Zonguldak"
     ],
     "0713Agustos2021": [
@@ -81,16 +71,25 @@
         "Mu\u015f",
         "\u015eanl\u0131urfa"
     ],
+    "0814Ocak2022": [
+        "Ayd\u0131n",
+        "Bilecik",
+        "Bing\u00f6l",
+        "Bolu",
+        "Eski\u015fehir",
+        "G\u00fcm\u00fc\u015fhane",
+        "\u0130stanbul",
+        "K\u0131rklareli",
+        "Mu\u011fla",
+        "Rize",
+        "Trabzon"
+    ],
     "3106Agustos2021": [
         "Bitlis",
         "Diyarbak\u0131r",
         "Hakkari",
         "\u015e\u0131rnak",
         "Van"
-    ],
-    "0309Nisan2021": [
-        "\u00c7ank\u0131r\u0131",
-        "Kilis"
     ],
     "1622Ekim2021": [
         "Kahramanmara\u015f",
@@ -99,6 +98,9 @@
     "1824Eylul2021": [
         "Kayseri",
         "K\u0131r\u015fehir"
+    ],
+    "0309Nisan2021": [
+        "Kilis"
     ],
     "2501Ekim2021": [
         "K\u00fctahya"
