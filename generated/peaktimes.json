@@ -1,7 +1,12 @@
 {
-    "2228Ocak2022": [
+    "2904Subat2022": [
         "Adana",
+        "Ad\u0131yaman",
+        "Afyon",
+        "A\u011fr\u0131",
+        "Amasya",
         "Ankara",
+        "Ardahan",
         "Artvin",
         "Ayd\u0131n",
         "Bal\u0131kesir",
@@ -9,69 +14,62 @@
         "Bolu",
         "Burdur",
         "Bursa",
+        "\u00c7anakkale",
         "\u00c7ank\u0131r\u0131",
         "\u00c7orum",
         "Denizli",
         "D\u00fczce",
+        "Edirne",
         "Elaz\u0131\u011f",
-        "Erzurum",
+        "Erzincan",
+        "Gaziantep",
         "Giresun",
         "Hakkari",
+        "Hatay",
         "I\u011fd\u0131r",
         "Isparta",
         "\u0130zmir",
+        "Kahramanmara\u015f",
         "Karab\u00fck",
+        "Karaman",
         "Kars",
+        "Kastamonu",
         "Kayseri",
         "K\u0131r\u0131kkale",
         "K\u0131rklareli",
+        "K\u0131r\u015fehir",
+        "Kilis",
         "Kocaeli",
+        "Konya",
         "K\u00fctahya",
         "Manisa",
         "Mersin",
         "Mu\u011fla",
+        "Nev\u015fehir",
+        "Ni\u011fde",
         "Ordu",
+        "Osmaniye",
         "Rize",
         "Sakarya",
         "Samsun",
         "Sinop",
         "Sivas",
+        "\u015e\u0131rnak",
         "Tekirda\u011f",
         "Tokat",
         "Trabzon",
         "Tunceli",
         "U\u015fak",
-        "Yalova"
-    ],
-    "1117Eylul2021": [
-        "Ad\u0131yaman",
-        "Karaman"
-    ],
-    "1723Nisan2021": [
-        "Afyon",
-        "A\u011fr\u0131",
-        "Antalya",
-        "Bayburt",
-        "Erzincan",
-        "Nev\u015fehir",
-        "Ni\u011fde"
+        "Yalova",
+        "Yozgat",
+        "Zonguldak"
     ],
     "2803Eylul2021": [
         "Aksaray"
     ],
-    "1016Nisan2021": [
-        "Amasya",
-        "\u00c7anakkale",
-        "Edirne",
-        "Gaziantep",
-        "Konya",
-        "Malatya",
-        "Yozgat"
-    ],
-    "0915Ekim2021": [
-        "Ardahan",
-        "Kastamonu",
-        "Zonguldak"
+    "1723Nisan2021": [
+        "Antalya",
+        "Bayburt"
     ],
     "0713Agustos2021": [
         "Batman",
@@ -89,21 +87,13 @@
     "3106Agustos2021": [
         "Bitlis",
         "Diyarbak\u0131r",
-        "\u015e\u0131rnak",
         "Van"
     ],
-    "2026Kas\u0131m2021": [
-        "Hatay",
-        "Osmaniye"
+    "2228Ocak2022": [
+        "Erzurum"
     ],
-    "1622Ekim2021": [
-        "Kahramanmara\u015f"
-    ],
-    "1824Eylul2021": [
-        "K\u0131r\u015fehir"
-    ],
-    "0309Nisan2021": [
-        "Kilis"
+    "1016Nisan2021": [
+        "Malatya"
     ],
     "2430Temmuz2021": [
         "Siirt"
