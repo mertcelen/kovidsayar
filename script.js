@@ -1,3 +1,4 @@
+let baseURL = "https://mertcelen.github.io/kovidsayar";
 let cities = [
     "Tüm Türkiye",
     "Adana",
@@ -118,7 +119,7 @@ function generateDatesSelect(){
 }
 
 async function loadJson(url) {
-    const response = await fetch(url,{cache: "no-store"});
+    const response = await fetch(baseURL+url,{cache: "no-store"});
     const json = await response.json();
     return json;
 }
